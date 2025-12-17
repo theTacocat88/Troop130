@@ -1,0 +1,137 @@
+body { /* Main body styling */
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    background-color: #3f6b4f;
+}
+
+.navigator { /* Navigation bar styling, justification*/
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #3f6b4f;
+    border-bottom: #133f25 2px solid;
+}
+
+.link-text { /* Nav buttons */
+    transition: all 0.2s ease-in-out;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #1f7b45;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: #154f2f 2px solid;
+}
+
+.link-text:hover { /* Nav button hover effect */
+    background-color: #133f25;
+    border: #1b4a3b 2px solid;
+    font-weight: 600;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cal-cell, .cal-header, .cal-heading, .next-month, .prev-month { /* Calendar common styles */
+    text-align: center;
+    width: 14.28%;
+}
+
+.cal-cell { /* Active calendar date cells */
+    padding: 20px;
+    background-color: #646B5C;
+    color: white;
+    border: 1px solid #4A4F45;
+    box-sizing: border-box;
+    width: calc(100% / 7);
+    height: 100px;
+    transition: all 0.1s ease-in-out;
+}
+
+/* Highlight for today's date */
+.cal-cell.today {
+    background-color: #7e8674;
+    color: white;
+    font-weight: 600;
+}
+
+.cal-cell:hover { /* Active calendar date cell hover effect */
+    background-color: #4A4F45;
+    cursor: pointer;
+}
+
+.next-month, .prev-month { /* Inactive calendar date cells */
+    background-color: #afb8a4;
+    color: #747474;
+    padding: 20px;
+    border: 1px solid #9ca48f;
+}
+
+.cal-header { /* Calendar header cells (Sun, Mon, etc.) */
+    background-color: #3f6b4f;
+    color: white;
+    font: bold 16px Montserrat;
+    padding: 12px;
+    border: 1px solid #2e4a36;
+}
+
+.cal-heading { /* Calendar month/year heading */
+    color: white;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    margin: 0px;
+}
+
+.cal-heading-cell { /* Calendar month/year heading table cell */
+    background-color: #3f6b4f;
+    padding: 0;
+}
+
+#calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 10px 20px -20px rgba(2, 2, 2, 0.3);
+}
+
+.white-heading { /* White heading style, for <h1> */
+    color: white;
+    font-family: Montserrat;
+    text-align: center;
+}
+
+.white-subheading { /* White subheading style, for <h3> */
+    color: white;
+    font-family: Montserrat;
+    margin-left: 20px;
+    font: 550 20px Montserrat;
+}
+
+#announcements-header { /* Announcements header styling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: #133f25 2px solid;
+}
+
+.white-backdrop { /* White backdrop style */
+    background-color: rgb(165, 182, 168);
+    padding: 20px;
+    height: 100vh
+}
+
+.clickable-date { /* Cursor pointer for clickable dates */
+    cursor: pointer;
+}
+
+.white { /* White text style */
+    color: white;
+}
