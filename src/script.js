@@ -2,12 +2,47 @@
 // Dates in calendar.html that can be clicked
 const clickableDates = document.getElementsByClassName("clickable-date");
 const dateContentDiv = document.getElementById("date-content");
+const eventContentDiv = document.getElementById("event-content");
 
 // Date
 const today = new Date();
 const currentDay = today.getDate();
 const currentMonth = today.getMonth();
 const currentYear = today.getFullYear();
+
+const eventContents = {
+    "1": "Weekly Troop Meeting at 7:00 PM.",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": "",
+    "6": "",
+    "7": "",
+    "8": "Weekly Troop Meeting at 7:00 PM.",
+    "9": "",
+    "10": "",
+    "11": "",
+    "12": "",
+    "13": "",
+    "14": "",
+    "15": "Weekly Troop Meeting at 7:00 PM.",
+    "16": "",
+    "17": "",
+    "18": "",
+    "19": "Our annual Troop lock-in - 7:00 PM to 9:00 AM the following day.",
+    "20": "Our annual Troop lock-in - pick-up your child at 9:00 AM.",
+    "21": "",
+    "22": "Weekly Troop Meeting at 7:00 PM.",
+    "23": "",
+    "24": "Have a great Christmas Eve!",
+    "25": "Enjoy your Christmas!",
+    "26": "",
+    "27": "",
+    "28": "",
+    "29": "Weekly Troop Meeting at 7:00 PM.",
+    "30": "",
+    "31": "Wishing everyone a safe and happy New Year!"
+}
 
 function numberToMonth(num) {
     const monthNames = [
@@ -33,6 +68,7 @@ function numberToDate(num) {
 // Handle click event on a date
 function handleDateClick(event) {
     dateContentDiv.textContent = numberToMonth(currentMonth) + " " + numberToDate(parseInt(event.target.textContent.trim())) + ", " + currentYear;
+    eventContentDiv.textContent = eventContents[event.target.textContent.trim()] || "No events scheduled for this date.";
 }
 
 // Assign IDs and event listeners to clickable dates
