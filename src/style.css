@@ -39,7 +39,7 @@ body {
 
 .cal-day:hover {
   background-color: #5A7863;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
 }
 
@@ -73,6 +73,41 @@ body {
   padding: 10px;
   border-radius: 5px;
   cursor: default;
+}
+
+.navigator {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: #90AB8B;
+}
+
+.navlinks {
+  font-family: Montserrat;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #6a6d70;
+  transition: all 0.2s ease;
+  margin: 10px;
+  border: 2px solid rgb(70, 92, 76);
+}
+
+.navlinks:hover {
+  background-color: #4f6957;
+  border-radius: 11px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border: 2px solid #4f6957;
+}
+
+.main-paragraph {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: #fff;
+  margin: 15px;
 }
 
 #event-calendar {
