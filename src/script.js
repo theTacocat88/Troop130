@@ -46,7 +46,7 @@ function displayEventDetails(event) {
   } else {
     eventDetails = "No events scheduled for this day";
   }
-  event_div.innerHTML = eventDetails;
+  event_details.innerHTML = eventDetails;
 }
 
 function addEventListeners() {
