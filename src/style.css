@@ -1,25 +1,33 @@
 /* FIX FULLSCREEN SIZING */
 
+html {
+  /* Responsive base font size */
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* Use border-box everywhere to keep sizing predictable */
+*, *::before, *::after { box-sizing: border-box; }
+
 body {
   /* Main body styling */
   margin: 0;
   padding: 0;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   background-color: rgb(110, 134, 107);
+  color: #1b1b1b;
 }
 
 .navigator {
-  /* Navigation bar styling, justification*/
+  /* Navigation bar styling, responsive justification */
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 12px 20px;
   background-color: #3f6b4f;
   border-bottom: #2e4a36 1px solid;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .link-text {
@@ -36,13 +44,15 @@ body {
 }
 
 .link-text:hover {
-  /* Nav button hover effect */
+  /* Nav button hover effect - use transform to avoid shifting layout */
   background-color: #133f25;
   border: #1b4a3b 2px solid;
   font-weight: 600;
-  padding-left: 15px;
-  padding-right: 15px;
+  transform: translateX(6px);
 }
+
+/* ensure transform animates smoothly */
+.link-text { transition: background-color 0.18s ease-in-out, transform 0.18s ease-in-out; }
 
 .cal-cell,
 .cal-header,
@@ -55,15 +65,19 @@ body {
 }
 
 .cal-cell {
-  /* Active calendar date cells */
-  padding: 20px;
+  /* Active calendar date cells (responsive) */
+  padding: calc(10px + 1vh);
   background-color: #646b5c;
   color: white;
   border: 1px solid #4a4f45;
   box-sizing: border-box;
   width: calc(100% / 7);
-  height: 100px;
-  transition: all 0.1s ease-in-out;
+  /* limit vertical growth in fullscreen: min between a pixel value and a vh-based ideal */
+  min-height: clamp(90px, 10vh, 160px);
+  height: auto;
+  vertical-align: top;
+  transition: all 0.15s ease-in-out;
+  overflow: hidden;
 }
 
 /* Highlight for today's date */
@@ -81,11 +95,14 @@ body {
 
 .next-month,
 .prev-month {
-  /* Inactive calendar date cells */
+  /* Inactive calendar date cells (responsive) */
   background-color: #afb8a4;
   color: #747474;
-  padding: 20px;
+  padding: calc(10px + 1vh);
   border: 1px solid #9ca48f;
+  /* limit vertical growth on tall viewports */
+  min-height: clamp(90px, 10vh, 160px);
+  height: auto;
 }
 
 .cal-header {
@@ -98,13 +115,14 @@ body {
 }
 
 .cal-heading {
-  /* Calendar month/year heading */
+  /* Calendar month/year heading (responsive) */
   color: white;
   background: transparent;
-  height: 100%;
+  height: auto;
   width: 100%;
-  padding: 25px;
-  margin: 0px;
+  /* cap padding to avoid huge headers on fullscreen */
+  padding: clamp(12px, 1.5vh, 32px);
+  margin: 0;
 }
 
 .cal-heading-cell {
@@ -129,9 +147,14 @@ body {
 }
 
 .white-backdrop {
-  /* White backdrop style */
+  /* White backdrop style (responsive) */
   background-color: rgb(165, 182, 168);
-  padding: 20px;
+  padding: calc(16px + 2vh);
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -184,9 +207,18 @@ body {
 
 #calendar-table {
   width: 100%;
+  max-width: 980px; /* prevents very wide stretching */
+  margin: 20px auto;
   border-collapse: collapse;
   border-spacing: 0;
-  box-shadow: 0 10px 20px -20px rgba(2, 2, 2, 0.3);
+  box-shadow: 0 15px 20px -20px rgba(2, 2, 2, 0.3);
+  table-layout: fixed;
+}
+
+#calendar-table td,
+#calendar-table th {
+  vertical-align: top;
+  box-sizing: border-box;
 }
 
 #announcements-header {
@@ -195,6 +227,14 @@ body {
   justify-content: center;
   align-items: center;
   border-bottom: #133f25 2px solid;
+}
+
+/* Improve spacing on larger/fullscreen viewports */
+@media (min-width: 1200px) {
+  .cal-cell, .next-month, .prev-month { padding: calc(18px + 1vh); min-height: 12vh; }
+  .white-backdrop { padding: 0px; }
+  .link-text { font-size: 20px; }
+  #event-content { margin-left: 40px; margin-right: 40px; }
 }
 
 #event-content {
