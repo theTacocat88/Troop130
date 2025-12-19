@@ -110,6 +110,14 @@ body {
   margin: 15px;
 }
 
+.main-paragraph-2 {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: #fff;
+  margin: 15px;
+  text-align: center;
+}
+
 #event-calendar {
   width: 100%;
   max-width: 800px;
@@ -133,4 +141,14 @@ body {
 
 #event-calendar th, #event-calendar td {
   vertical-align: top;
+}
+
+#announcements {
+  background-color: #5A7863;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 800px;
 }
