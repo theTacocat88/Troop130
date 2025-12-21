@@ -65,7 +65,11 @@ function displayEventDetails(event) {
     eventDetails = "No events scheduled for this day";
   }
   event_details.innerHTML = eventDetails;
-  event_details_heading.innerHTML = convertMonthToString(month) + " " + eventId + getSuffixOfDate(eventId);
+  if(event.target.id == "today") {
+    event_details_heading.innerHTML = "Today, " + convertMonthToString(month) + " " + eventId + getSuffixOfDate(eventId);
+  } else {
+    event_details_heading.innerHTML = convertMonthToString(month) + " " + eventId + getSuffixOfDate(eventId);
+  }
 }
 
 function addEventListeners() {
@@ -95,5 +99,14 @@ function setMonth(month, year) {
   calendar_heading.innerHTML = convertMonthToString(month) + " " + year;
 }
 
+function getToday() {
+  for (let i = 0; i < dates.length; i++) {
+    if(dates[i].getAttribute("data-date-id") == today.getDate()) {
+      dates[i].id = "today";
+    }
+  }
+}
+
 addEventListeners();
 setMonth(month, year);
+getToday();

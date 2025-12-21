@@ -159,3 +159,11 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
+
+#today {
+  background-color: #536674;
+}
+
+#today:hover {
+  background-color: #5A7863;
+}
