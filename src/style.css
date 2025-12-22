@@ -243,9 +243,7 @@ body {
   background-color: #5A7863;
 }
 
-/* Mobile improvements */
 @media (max-width: 768px) {
-  /* Stack navigation vertically */
   .navigator {
     flex-direction: column;
     align-items: center;
@@ -253,7 +251,7 @@ body {
   }
 
   .navlinks {
-    width: 80%;              /* Full-width buttons for easier tapping */
+    width: 80%;
     max-width: 300px;
     margin: 10px auto;
     display: block;
@@ -261,15 +259,14 @@ body {
     min-width: 90vw;
   }
 
-  /* Improve calendar table on small screens */
   #event-calendar {
     max-width: 100%;
-    overflow-x: auto;        /* Allow horizontal scroll if needed, but prevent body overflow */
+    overflow-x: auto;
   }
 
   .cal-day {
-    font-size: 16px;         /* Slightly smaller text */
-    height: auto;            /* Flexible height */
+    font-size: 16px;
+    height: auto;
     min-height: 70px;
     padding: 6px;
   }
@@ -288,18 +285,15 @@ body {
     font-size: 32px;
   }
 
-  /* Prevent body horizontal scroll */
   body {
     overflow-x: hidden;
   }
 
-  /* Ensure backgrounds cover stacked elements */
   .navigator {
     padding-bottom: 20px;
   }
 }
 
-/* Extra small phones */
 @media (max-width: 480px) {
   .navlinks {
     font-size: 16px;
