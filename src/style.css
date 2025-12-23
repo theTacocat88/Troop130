@@ -1,3 +1,19 @@
+:root {
+  --background-color: #3B4953;
+  --disabled-bg-color: #69726c;
+  --today-color: #536674;
+  --navigation-color: #90AB8B;
+  --navigation-link-color: #6a6d70;
+  --text-color: #fff;
+  --disabled-text-color: #919e96;
+  --border-color-1: #687a6e;
+  --border-color-2: #4f6957;
+  --border-color-3: #465c4c;
+  --content-bg-color: #5A7863;
+  --button-color: #405546;
+  --shadow-color: #00000080;
+}
+
 html, body {
   height: 100%;
 }
@@ -5,18 +21,18 @@ html, body {
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: #3B4953;
+  background-color: var(--background-color);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #fff;
+  color: var(--text-color);
   font-family: Montserrat;
 }
 
 .white-heading {
   font-family: Montserrat;
   font-size: 24px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   margin-bottom: 20px;
 }
@@ -24,21 +40,21 @@ body {
 .cal-day {
   font-family: Montserrat;
   font-size: 18px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   width: 14.285714285714285%;
   height: 90px;
   text-align: right;
-  border: 1px solid #687a6e;
+  border: 1px solid var(--border-color-1);
   padding: 8px;
   margin: none;
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
-  background-color: #3B4953;
+  background-color: var(--background-color);
 }
 
 .cal-day:hover {
-  background-color: #5A7863;
+  background-color: var(--content-bg-color);
   font-size: 22px;
   cursor: pointer;
 }
@@ -46,19 +62,19 @@ body {
 .cal-header {
   font-family: Montserrat;
   font-size: 20px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   margin-bottom: 10px;
-  border: 2px solid #4f6957;
+  border: 2px solid var(--border-color-2);
   padding: 10px;
   border-radius: 5px;
-  background-color: #5A7863;
+  background-color: var(--content-bg-color);
 }
 
 .cal-heading {
   font-family: Montserrat;
   font-size: 40px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   margin-bottom: 30px;
 }
@@ -66,10 +82,10 @@ body {
 .prev-month, .next-month {
   font-family: Montserrat;
   font-size: 20px;
-  color: #919e96;
+  color: var(--disabled-text-color);
   text-align: right;
   margin-bottom: 10px;
-  background-color: #69726c;
+  background-color: var(--disabled-bg-color);
   padding: 10px;
   border-radius: 5px;
   cursor: default;
@@ -79,7 +95,7 @@ body {
   display: flex;
   justify-content: flex-start;
   padding: 20px;
-  background-color: #90AB8B;
+  background-color: var(--navigation-color);
 }
 
 .navlinks {
@@ -89,24 +105,24 @@ body {
   color: white;
   font-size: 18px;
   border-radius: 10px;
-  background-color: #6a6d70;
+  background-color: var(--navigation-link-color);
   transition: all 0.2s ease;
   margin: 10px;
-  border: 2px solid rgb(70, 92, 76);
+  border: 2px solid var(--border-color-3);
 }
 
 .navlinks:hover {
-  background-color: #4f6957;
+  background-color: var(--border-color-2);
   border-radius: 11px;
   padding-left: 13px;
   padding-right: 13px;
-  border: 2px solid #4f6957;
+  border: 2px solid var(--border-color-2);
 }
 
 .main-paragraph {
   font-family: Montserrat;
   font-size: 14px;
-  color: #fff;
+  color: var(--text-color);
   margin: 15px;
   text-align: center;
 }
@@ -114,7 +130,7 @@ body {
 .main-paragraph-2 {
   font-family: Montserrat;
   font-size: 14px;
-  color: #fff;
+  color: var(--text-color);
   margin: 15px;
   text-align: center;
   max-width: 800px;
@@ -131,7 +147,7 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 15px;
-  background-color: #90AB8B;
+  background-color: var(--navigation-color);
   border-radius: 10px;
   box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.5);
   margin: 20px auto;
@@ -155,11 +171,11 @@ body {
 }
 
 #left-button-gallery {
-  background-color: #5A7863;
-  color: white;
+  background-color: var(--content-bg-color);
+  color: var(--text-color);
   font: 200 Montserrat bold;
   font-size: large;
-  border: 2px solid #405546;
+  border: 2px solid var(--button-color);
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
@@ -170,21 +186,21 @@ body {
 }
 
 #left-button-gallery:hover, #right-button-gallery:hover {
-  background-color: #4f6957;
+  background-color: var(--border-color-2);
   font-size: small;
   font-weight: bold;
   transform: scale(1.2);
   margin: 0 auto;
-  border: 4px solid #405546;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border: 4px solid var(--button-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 #right-button-gallery {
-  background-color: #5A7863;
-  color: white;
+  background-color: var(--content-bg-color);
+  color: var(--text-color);
   font: 200 Montserrat bold;
   font-size: large;
-  border: 2px solid #405546;
+  border: 2px solid var(--button-color);
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
@@ -199,18 +215,18 @@ body {
   max-width: 800px;
   margin: 20px auto;
   padding: 10px;
-  background-color: #90AB8B;
+  background-color: var(--navigation-color);
   border-radius: 10px;
-  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 10px 20px var(--shadow-color);
   text-align: center;
 }
 
 #event-details {
-  background-color: #5A7863;
+  background-color: var(--content-bg-color);
   margin: 0 auto;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 10px 20px var(--shadow-color);
   text-align: center;
   max-width: 800px;
 }
@@ -220,11 +236,11 @@ body {
 }
 
 #announcements {
-  background-color: #5A7863;
+  background-color: var(--content-bg-color);
   margin: 20px auto;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 10px 20px var(--shadow-color);
   text-align: center;
   max-width: 800px;
   width: 90vw;
@@ -236,11 +252,11 @@ body {
 }
 
 #today {
-  background-color: #536674;
+  background-color: var(--today-color);
 }
 
 #today:hover {
-  background-color: #5A7863;
+  background-color: var(--content-bg-color);
 }
 
 @media (max-width: 768px) {
