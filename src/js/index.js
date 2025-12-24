@@ -12,6 +12,12 @@ var gallery = [
   "<img src='http://placehold.co/900x600?text=Placeholder+7' loading='eager'/>",
   "<img src='http://placehold.co/900x600?text=Placeholder+8' loading='eager'/>",
   "<img src='http://placehold.co/900x600?text=Placeholder+9' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+10' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+11' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+12' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+13' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+14' loading='eager'/>",
+  "<img src='http://placehold.co/900x600?text=Placeholder+15' loading='eager'/>"
 ];
 
 function addEventListeners() {
@@ -32,8 +38,8 @@ function leftGalleryButtonClicked() {
   galleryItem.innerHTML = gallery[index - 1];
   index--;
   if (index < 0) {
-    galleryItem.innerHTML = gallery[8];
-    index = 8;
+    galleryItem.innerHTML = gallery[gallery.length - 1];
+    index = gallery.length - 1;
   }
 }
 
