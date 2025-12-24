@@ -308,7 +308,8 @@ body {
 #event-form {
   background-color: var(--content-bg-color);
   margin: 20px auto;
-  padding: 20px;
+  padding: 25px;
+  padding-bottom: 40px;
   border-radius: 15px;
   box-shadow: 3px 10px 20px var(--shadow-color);
   text-align: center;
@@ -342,6 +343,29 @@ input[type="date"]#event-date:focus,
 input[type="time"]#event-time:focus {
   border-color: var(--border-color-2);
   box-shadow: 0 0 5px var(--border-color-2);
+}
+
+#submit-button {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  font-family: Montserrat;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 0px;
+  width: 700px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border: 4px solid var(--button-color);
+}
+
+#submit-button:hover {
+  background-color: var(--border-color-2);
+  font-weight: bold;
+  margin: 0 auto;
+  border: 4px solid var(--button-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 #event-form select {
