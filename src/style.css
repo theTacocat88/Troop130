@@ -147,6 +147,15 @@ body {
   text-align: center;
 }
 
+.navlinks-content:hover {
+  background-color: var(--border-color-2);
+  border-radius: 11px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border: 2px solid var(--border-color-2);
+  transform: scale(1.05);
+}
+
 .navlinks:hover {
   background-color: var(--border-color-2);
   border-radius: 11px;
