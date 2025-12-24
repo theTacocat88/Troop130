@@ -1,5 +1,6 @@
 :root {
   --background-color: #3B4953;
+  --light-background-color: #88a892;
   --disabled-bg-color: #69726c;
   --today-color: #536674;
   --navigation-color: #90AB8B;
@@ -302,6 +303,65 @@ body {
 
 #today:hover {
   background-color: var(--content-bg-color);
+}
+
+#event-form {
+  background-color: var(--content-bg-color);
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 3px 10px 20px var(--shadow-color);
+  text-align: center;
+  max-width: 800px;
+}
+
+#event-form 
+input[type="text"]#name,
+input[type="text"]#event-name, 
+input[type="text"]#event-location, 
+input[type="date"]#event-date, 
+input[type="time"]#event-time {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  border: 2px solid var(--border-color-3);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--light-background-color);
+  text-align: center;
+}
+
+input[type="text"]#name:focus,
+input[type="text"]#event-name:focus, 
+input[type="text"]#event-location:focus, 
+input[type="date"]#event-date:focus, 
+input[type="time"]#event-time:focus {
+  border-color: var(--border-color-2);
+  box-shadow: 0 0 5px var(--border-color-2);
+}
+
+#event-form select {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  border: 2px solid var(--border-color-3);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--light-background-color);
+  text-align: center;
+}
+
+.invert-icon::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
 }
 
 @media (max-width: 768px) {

@@ -31,20 +31,30 @@
             </nav>
         </header>
         <main>
-            <form action="">
+            <form action="" id="event-form">
+                <label for="name">Your Name:</label>
+                <br/>
+                <input type="text" id="name" name="name" required/>
+                <br/>
                 <label for="event-name">Event Name:</label>
+                <br/>
                 <input type="text" id="event-name" name="event-name" required/>
-                <br>
+                <br/>
                 <label for="event-date">Event Date:</label>
-                <input type="date" id="event-date" name="event-date" required/>
-                <br>
+                <br/>
+                <input type="date" class="invert-icon" id="event-date" name="event-date" required/>
+                <br/>
                 <label for="event-time">Event Time:</label>
-                <input type="time" id="event-time" name="event-time" required/>
-                <br>
+                <br/>
+                <input type="time" class="invert-icon" id="event-time" name="event-time" required/>
+                <br/>
+                <br/>
                 <label for="event-location">Event Location:</label>
+                <br/>
                 <input type="text" id="event-location" name="event-location" required/>
-                <br>
+                <br/>
                 <label for="event-type">Event Type:</label>
+                <br/>
                 <select id="event-type" name="event-type" required>
                     <option value="">Select Event Type</option>
                     <option value="meeting">Meeting</option>
@@ -52,8 +62,9 @@
                     <option value="service-project">Service Project</option>
                     <option value="other">Other</option>
                 </select>
-                <br>
-                <button type="submit">Submit</button>
+                <br/>
+                <br/>
+                <input type="submit" value="Submit"/>
             </form>
         </main>
         <!--<script src="src/event-form.js"></script>-->
