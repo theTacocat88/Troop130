@@ -18,38 +18,22 @@ var today = new Date();
 var month = today.getMonth();
 var year = today.getFullYear();
 
-var events = {
-    "1": "Weekly troop meeting, 7:00 PM",
-    "2": "",
-    "3": "",
-    "4": "",
-    "5": "",
-    "6": "",
-    "7": "",
-    "8": "Weekly troop meeting, 7:00 PM",
-    "9": "",
-    "10": "",
-    "11": "",
-    "12": "",
-    "13": "",
-    "14": "",
-    "15": "Weekly troop meeting, 7:00 PM",
-    "16": "",
-    "17": "",
-    "18": "",
-    "19": "Annual lock-in at Messiah Lutheran Church 7:00 PM to 9:00 AM",
-    "20": "Pick up your child at 9:00 AM from our lock-in at Messiah Lutheran Church",
-    "21": "",
-    "22": "",
-    "23": "",
-    "24": "",
-    "25": "Merry Christmas!🎄",
-    "26": "",
-    "27": "",
-    "28": "",
-    "29": "",
-    "30": "",
-    "31": "Happy New Years! 🎉",
+var events;
+
+function fetchEvents() {
+  fetch('src/data/events.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('events.json did not respond with a successful status');
+    }
+    return response.json();
+  })
+  .then(data => {
+    events = data;
+  })
+  .catch(error => {
+    console.error('Error fetching data from events.json: ', error);
+  });
 }
 
 function getSuffixOfDate(date) {
@@ -67,8 +51,8 @@ function getSuffixOfDate(date) {
 
 function displayEventDetails(event) {
   const eventId = event.target.getAttribute("data-date-id");
-  if(events[eventId] != "") {
-    eventDetails = events[eventId];
+  if(events[String(year)][convertMonthToString(month)][String(eventId)] != "") {
+    eventDetails = events[String(year)][convertMonthToString(month)][String(eventId)];
   } else {
     eventDetails = "No events scheduled for this day";
   }
@@ -143,3 +127,5 @@ setHeaderWidth();
 addEventListeners();
 setMonth(month, year);
 getToday();
+
+fetchEvents();
