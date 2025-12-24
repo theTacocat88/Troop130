@@ -1,0 +1,60 @@
+:root {
+  --background-color: #3B4953;
+  --light-background-color: #88a892;
+  --disabled-bg-color: #69726c;
+  --today-color: #536674;
+  --navigation-color: #90AB8B;
+  --navigation-link-color: #6a6d70;
+  --text-color: #fff;
+  --disabled-text-color: #919e96;
+  --border-color-1: #687a6e;
+  --border-color-2: #4f6957;
+  --border-color-3: #465c4c;
+  --content-bg-color: #5A7863;
+  --button-color: #405546;
+  --shadow-color: #00000080;
+  --form-link-color: #85b8df;
+  --form-link-hover-color: #7eb4dd;
+  --form-link-visited-color: #93c8f1;
+}
+
+.navlinks-content {
+  font-family: Montserrat;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: var(--navigation-link-color);
+  transition: all 0.2s ease;
+  margin: 10px auto;
+  border: 2px solid var(--border-color-3);
+  display: inline-block;
+  text-align: center;
+}
+
+.navlinks-content:hover {
+  background-color: var(--border-color-2);
+  border-radius: 11px;
+  padding-left: 13px;
+  padding-right: 13px;
+  border: 2px solid var(--border-color-2);
+  transform: scale(1.05);
+}
+
+#return-to-home {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: var(--form-link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#max-width-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}

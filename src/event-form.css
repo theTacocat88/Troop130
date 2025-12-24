@@ -1,0 +1,107 @@
+:root {
+  --background-color: #3B4953;
+  --light-background-color: #88a892;
+  --disabled-bg-color: #69726c;
+  --today-color: #536674;
+  --navigation-color: #90AB8B;
+  --navigation-link-color: #6a6d70;
+  --text-color: #fff;
+  --disabled-text-color: #919e96;
+  --border-color-1: #687a6e;
+  --border-color-2: #4f6957;
+  --border-color-3: #465c4c;
+  --content-bg-color: #5A7863;
+  --button-color: #405546;
+  --shadow-color: #00000080;
+  --form-link-color: #85b8df;
+  --form-link-hover-color: #7eb4dd;
+  --form-link-visited-color: #93c8f1;
+}
+
+#max-width-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#event-form {
+  background-color: var(--content-bg-color);
+  margin: 20px auto;
+  padding: 25px;
+  padding-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 3px 10px 20px var(--shadow-color);
+  text-align: center;
+  max-width: 800px;
+}
+
+#event-form 
+input[type="text"]#name,
+input[type="text"]#event-name, 
+input[type="text"]#event-location, 
+input[type="date"]#event-date, 
+input[type="time"]#event-time {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  border: 2px solid var(--border-color-3);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--light-background-color);
+  text-align: center;
+}
+
+input[type="text"]#name:focus,
+input[type="text"]#event-name:focus, 
+input[type="text"]#event-location:focus, 
+input[type="date"]#event-date:focus, 
+input[type="time"]#event-time:focus {
+  border-color: var(--border-color-2);
+  box-shadow: 0 0 5px var(--border-color-2);
+}
+
+#submit-button {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  font-family: Montserrat;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 0px;
+  width: 700px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border: 4px solid var(--button-color);
+}
+
+#submit-button:hover {
+  background-color: var(--border-color-2);
+  font-weight: bold;
+  margin: 0 auto;
+  border: 4px solid var(--button-color);
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#event-form select {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  border: 2px solid var(--border-color-3);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-family: Montserrat;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--light-background-color);
+  text-align: center;
+}
+
+.invert-icon::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+}

@@ -1,0 +1,185 @@
+:root {
+  --background-color: #3B4953;
+  --light-background-color: #88a892;
+  --disabled-bg-color: #69726c;
+  --today-color: #536674;
+  --navigation-color: #90AB8B;
+  --navigation-link-color: #6a6d70;
+  --text-color: #fff;
+  --disabled-text-color: #919e96;
+  --border-color-1: #687a6e;
+  --border-color-2: #4f6957;
+  --border-color-3: #465c4c;
+  --content-bg-color: #5A7863;
+  --button-color: #405546;
+  --shadow-color: #00000080;
+  --form-link-color: #85b8df;
+  --form-link-hover-color: #7eb4dd;
+  --form-link-visited-color: #93c8f1;
+}
+
+.cal-day {
+  font-family: Montserrat;
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: center;
+  width: 14.285714285714285%;
+  height: 90px;
+  text-align: right;
+  border: 1px solid var(--border-color-1);
+  padding: 8px;
+  margin: none;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--background-color);
+}
+
+.cal-day:hover {
+  background-color: var(--content-bg-color);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.cal-header {
+  font-family: Montserrat;
+  font-size: 20px;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 10px;
+  border: 2px solid var(--border-color-2);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--content-bg-color);
+}
+
+.cal-heading {
+  font-family: Montserrat;
+  font-size: 40px;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cal-footer {
+  margin: 15px;
+  margin-bottom: 15px;
+}
+
+.cal-footer-container {
+  background-color: var(--content-bg-color);
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  justify-content: space-between;
+  text-align: center;
+}
+
+.prev-month, .next-month {
+  font-family: Montserrat;
+  font-size: 20px;
+  color: var(--disabled-text-color);
+  text-align: right;
+  margin-bottom: 10px;
+  background-color: var(--disabled-bg-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: default;
+}
+
+#form-footer-text {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: var(--text-color);
+  margin: 15px;
+  text-align: center;
+}
+
+#form-link {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: var(--form-link-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+#form-link:hover {
+  color: var(--form-link-hover-color);
+  font-weight: bold;
+}
+
+#form-link:visited {
+  color: var(--form-link-visited-color);
+}
+
+#event-calendar {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: var(--navigation-color);
+  border-radius: 10px;
+  box-shadow: 3px 10px 20px var(--shadow-color);
+  text-align: center;
+}
+
+#event-details {
+  background-color: var(--content-bg-color);
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 3px 10px 20px var(--shadow-color);
+  text-align: center;
+  max-width: 800px;
+}
+
+#event-calendar th, #event-calendar td {
+  vertical-align: top;
+}
+
+#max-width-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#today {
+  background-color: var(--today-color);
+}
+
+#today:hover {
+  background-color: var(--content-bg-color);
+}
+
+@media (max-width: 768px) {
+  #event-calendar {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .cal-day {
+    font-size: 16px;
+    height: auto;
+    min-height: 70px;
+    padding: 6px;
+  }
+
+  .prev-month, .next-month {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .cal-header {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .cal-heading {
+    font-size: 32px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
