@@ -92,6 +92,46 @@ function setMonth(month, year) {
   calendar_heading.innerHTML = convertMonthToString(month) + " " + year;
 }
 
+function buildCalendar() {
+  const body = document.getElementById("calendar-body");
+  if (!body) return;
+  body.innerHTML = "";
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+  let dayCounter = 1;
+  let nextMonthDay = 1;
+
+  const rowsNeeded = Math.max(5, Math.ceil((firstDay + daysInMonth) / 7));
+  for (let week = 0; week < rowsNeeded; week++) {
+    const tr = document.createElement("tr");
+    tr.className = "cal-row";
+
+    for (let dow = 0; dow < 7; dow++) {
+      const td = document.createElement("td");
+
+      if (week === 0 && dow < firstDay) {
+        td.className = "prev-month";
+        td.textContent = String(daysInPrevMonth - firstDay + 1 + dow);
+      } else if (dayCounter > daysInMonth) {
+        td.className = "next-month";
+        td.textContent = String(nextMonthDay++);
+      } else {
+        td.className = "cal-day";
+        td.setAttribute("data-date-id", String(dayCounter));
+        td.textContent = String(dayCounter);
+        dayCounter++;
+      }
+
+      tr.appendChild(td);
+    }
+
+    body.appendChild(tr);
+  }
+}
+
 function getToday() {
   for (let i = 0; i < dates.length; i++) {
     if(dates[i].getAttribute("data-date-id") == today.getDate()) {
@@ -124,8 +164,10 @@ function setHeaderWidth() {
 
 setHeaderWidth();
 
-addEventListeners();
 setMonth(month, year);
+buildCalendar();
+
+addEventListeners();
 getToday();
 
 fetchEvents();
