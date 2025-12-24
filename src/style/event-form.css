@@ -18,6 +18,22 @@
   --form-link-visited-color: #93c8f1;
 }
 
+form {
+  max-width: 100%;
+  width: 100%;
+}
+
+input, textarea, button {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input, button, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
 #max-width-800 {
   max-width: 800px;
   margin: 0 auto;
@@ -52,6 +68,14 @@ input[type="time"]#event-time {
   color: var(--text-color);
   background-color: var(--light-background-color);
   text-align: center;
+}
+
+input[type="date"]#event-date,
+input[type="time"]#event-time {
+  width: 100%;
+  min-width: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type="text"]#name:focus,
@@ -104,4 +128,28 @@ input[type="time"]#event-time:focus {
 
 .invert-icon::-webkit-calendar-picker-indicator {
     filter: invert(100%);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  input[type="date"]#event-date,
+  input[type="time"]#event-time {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  input[type="submit"]#submit-button {
+    font-size: 16px;
+    padding: 10px 12px;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
 }
