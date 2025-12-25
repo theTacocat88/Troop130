@@ -23,10 +23,27 @@ form {
   width: 100%;
 }
 
-input, textarea, button {
-  max-width: 100%;
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea {
   width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 16px;
+  line-height: 1.5;
+  height: auto;
+  min-height: 44px;
+}
+
+form,
+form input,
+form textarea,
+form button {
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 input, button, textarea {
@@ -70,12 +87,14 @@ input[type="time"]#event-time {
   text-align: center;
 }
 
-input[type="date"]#event-date,
-input[type="time"]#event-time {
-  width: 100%;
-  min-width: 0;
+input[type="date"],
+input[type="time"] {
+  height: 44px;
+  min-height: 44px;
+  appearance: none; 
   -webkit-appearance: none;
-  appearance: none;
+  background: var(--light-background-color);
+  color: var(--text-color);
 }
 
 input[type="text"]#name:focus,
@@ -127,7 +146,7 @@ input[type="time"]#event-time:focus {
 }
 
 .invert-icon::-webkit-calendar-picker-indicator {
-    filter: invert(100%);
+    filter: invert(100%) !important;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator,
@@ -151,5 +170,70 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
   textarea {
     min-height: 120px;
+  }
+  
+  button[type="submit"],
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 12px 20px;
+    min-height: 48px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 16px;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  input[type="date"]#event-date,
+  input[type="time"]#event-time {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  input[type="submit"]#submit-button {
+    font-size: 16px;
+    padding: 10px 12px;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 120px !important;
+  }
+  
+  button[type="submit"],
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 12px 20px;
+    min-height: 48px;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 16px;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 16px !important;
+    padding: 12px !important;
+  }
+
+  input[type="date"],
+  input[type="time"] {
+    height: 48px !important;
+    padding: 0 12px !important;
+  }
+
+  button[type="submit"] {
+    padding: 14px !important;
   }
 }
