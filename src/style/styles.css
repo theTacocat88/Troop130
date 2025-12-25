@@ -41,6 +41,24 @@ body {
   margin-bottom: 20px;
 }
 
+.site-footer {
+  padding: 10px 0;
+  text-align: center;
+  margin-top: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: fit-content;
+  width: 90vh;
+  border-radius: 15px;
+}
+.footer-text {
+  color: var(--text-color);
+  font-family: Montserrat;
+  font-size: 14px;
+  margin: 0;
+  margin: 10px;
+}
+
 .logo {
   width: 34px;
   height: 34px;
