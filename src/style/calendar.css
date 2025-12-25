@@ -165,6 +165,12 @@
     padding: 6px;
   }
 
+  .cal-day:hover {
+    background-color: var(--content-bg-color);
+    font-size: 29px;
+    cursor: pointer;
+  }
+
   .prev-month, .next-month {
     font-size: 16px;
     padding: 8px;
