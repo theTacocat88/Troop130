@@ -1,5 +1,3 @@
-import { getSuffixOfDate, convertMonthToString } from "./utils";
-
 const calendar = document.getElementById("event-calendar");
 const dates = document.getElementsByClassName("cal-day");
 const event_div = document.getElementById("event-details");
