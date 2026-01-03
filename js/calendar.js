@@ -1,3 +1,5 @@
+import { getSuffixOfDate, convertMonthToString } from "./utils";
+
 const calendar = document.getElementById("event-calendar");
 const dates = document.getElementsByClassName("cal-day");
 const event_div = document.getElementById("event-details");
@@ -21,19 +23,18 @@ var year = today.getFullYear();
 var events;
 
 function fetchEvents() {
-  return fetch('/data/events.json')
-    .then(response => {
+  return fetch("/data/events.json")
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('events.json did not respond with a successful status');
+        throw new Error("events.json did not respond with a successful status");
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       events = data;
       return data;
     })
-    .catch(error => {
-      console.error('Error fetching data from events.json: ', error);
+    .catch((error) => {
       throw error;
     });
 }
@@ -53,24 +54,37 @@ function getSuffixOfDate(date) {
 
 function displayEventDetails(event) {
   const eventId = event.target.getAttribute("data-date-id");
-  if(events[String(year)][convertMonthToString(month)][String(eventId)]["data"] != "") {
-    eventDetails = events[String(year)][convertMonthToString(month)][String(eventId)]["data"];
+  if (
+    events[String(year)][convertMonthToString(month)][String(eventId)][
+      "data"
+    ] != ""
+  ) {
+    eventDetails =
+      events[String(year)][convertMonthToString(month)][String(eventId)][
+        "data"
+      ];
   } else {
     eventDetails = "No events scheduled for this day";
   }
   event_details.innerHTML = eventDetails;
-  if(event.target.id == "today") {
-    event_details_heading.innerHTML = "Today, " + convertMonthToString(month) + " " + eventId + getSuffixOfDate(eventId);
+  if (event.target.id == "today") {
+    event_details_heading.innerHTML =
+      "Today, " +
+      convertMonthToString(month) +
+      " " +
+      eventId +
+      getSuffixOfDate(eventId);
   } else {
-    event_details_heading.innerHTML = convertMonthToString(month) + " " + eventId + getSuffixOfDate(eventId);
+    event_details_heading.innerHTML =
+      convertMonthToString(month) + " " + eventId + getSuffixOfDate(eventId);
   }
 }
 
 function addEventListeners() {
-    for (let i = 0; i < dates.length; i++) {
-        dates[i].addEventListener("click", displayEventDetails);
-    }
-    window.addEventListener("resize", setHeaderWidth);
+  for (let i = 0; i < dates.length; i++) {
+    dates[i].addEventListener("click", displayEventDetails);
+  }
+  window.addEventListener("resize", setHeaderWidth);
 }
 
 function convertMonthToString(month) {
@@ -127,7 +141,8 @@ function buildCalendar() {
 
         if (events) {
           const monthName = convertMonthToString(month);
-          const dayEvents = events[String(year)]?.[monthName]?.[String(dayCounter)] || "";
+          const dayEvents =
+            events[String(year)]?.[monthName]?.[String(dayCounter)] || "";
           if (dayEvents && dayEvents !== "") {
             const count = 1;
             const badge = document.createElement("span");
@@ -160,7 +175,7 @@ function addEventCounts() {
       if (!dates[i].querySelector(".event-count-badge")) {
         const badge = document.createElement("span");
         badge.classList.add("event-count-badge");
-        switch(dayObj.tag.trim().toLowerCase()) {
+        switch (dayObj.tag.trim().toLowerCase()) {
           case "meeting":
             badge.style.background = "#4CAF50";
             break;
@@ -182,7 +197,7 @@ function addEventCounts() {
 
 function getToday() {
   for (let i = 0; i < dates.length; i++) {
-    if(dates[i].getAttribute("data-date-id") == today.getDate()) {
+    if (dates[i].getAttribute("data-date-id") == today.getDate()) {
       dates[i].id = "today";
     }
   }
@@ -191,7 +206,7 @@ function getToday() {
 function setHeaderWidth() {
   const width = window.innerWidth;
 
-  if(width <= 768) {
+  if (width <= 768) {
     sundayHeader.innerHTML = "S";
     mondayHeader.innerHTML = "M";
     tuesdayHeader.innerHTML = "T";
@@ -217,8 +232,8 @@ buildCalendar();
 addEventListeners();
 getToday();
 
-fetchEvents().then(() => {
-  addEventCounts();
-}).catch(err => {
-  console.error('Error loading events:', err);
-});
+fetchEvents()
+  .then(() => {
+    addEventCounts();
+  })
+  .catch((err) => {});
