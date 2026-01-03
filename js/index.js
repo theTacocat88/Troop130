@@ -19,7 +19,7 @@ var gallery = [
   "<img src='https://placehold.co/900x600?text=Placeholder+12' loading='eager' alt='12'/>",
   "<img src='https://placehold.co/900x600?text=Placeholder+13' loading='eager' alt='13'/>",
   "<img src='https://placehold.co/900x600?text=Placeholder+14' loading='eager' alt='14'/>",
-  "<img src='https://placehold.co/900x600?text=Placeholder+15' loading='eager' alt='15'/>"
+  "<img src='https://placehold.co/900x600?text=Placeholder+15' loading='eager' alt='15'/>",
 ];
 
 function fetchEvents() {
@@ -40,8 +40,8 @@ function fetchEvents() {
 }
 
 function addEventListeners() {
-    rightGalleryButton.addEventListener("click", rightGalleryButtonClicked);
-    leftGalleryButton.addEventListener("click", leftGalleryButtonClicked);
+  rightGalleryButton.addEventListener("click", rightGalleryButtonClicked);
+  leftGalleryButton.addEventListener("click", leftGalleryButtonClicked);
 }
 
 function rightGalleryButtonClicked() {
