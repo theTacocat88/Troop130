@@ -7,9 +7,12 @@ function fetchAnnouncements() {
             return response.json();
         })
         .then(data => {
-            const announcementsArray = Object.entries(data.announcements)
+            const announcementsArray = Object.entries(data.announcements || {})
                 .map(([key, item]) => ({ id: Number(key), ...item }))
-            displayAnnouncements(announcementsArray);
+                .sort((a, b) => b.id - a.id);
+
+            const lastUpdated = data.meta?.lastUpdated;
+            displayAnnouncements(announcementsArray, lastUpdated);
         })
         .catch(error => {
             console.error('Error fetching announcements:', error);
@@ -18,11 +21,11 @@ function fetchAnnouncements() {
         });
 }
 
-function displayAnnouncements(announcements) {
+function displayAnnouncements(announcements, lastUpdated) {
     announcementsContainer.innerHTML = '';
 
     if (announcements.length === 0) {
-        announcementsContainer.innerHTML = 
+        announcementsContainer.innerHTML += 
             '<p class="main-paragraph-2">No announcements at this time.</p>';
         return;
     }
@@ -44,6 +47,19 @@ function displayAnnouncements(announcements) {
         item.appendChild(text);
 
         announcementsContainer.appendChild(item);
+    }
+
+    if (lastUpdated) {
+        const date = new Date(lastUpdated);
+        const formatted = date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        const metaDiv = document.createElement('p');
+        metaDiv.classList.add('last-updated');
+        metaDiv.textContent = `Last updated: ${formatted}`;
+        announcementsContainer.appendChild(metaDiv);
     }
 }
 
